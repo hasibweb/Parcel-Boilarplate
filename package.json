@@ -5,13 +5,14 @@
   "repository": {},
   "dependencies": {},
   "devDependencies": {
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-custom-dist-structure": "^1.1.14",
-    "sass": "^1.26.10",
     "@babel/core": "^7.9.0",
     "@babel/plugin-transform-runtime": "^7.9.0",
     "@babel/runtime-corejs2": "^7.9.2",
-    "rimraf": "^3.0.2"
+    "autoprefixer": "^9.8.6",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-custom-dist-structure": "^1.1.14",
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.10"
   },
   "scripts": {
     "dev": "npm run clean && parcel src/index.html --out-dir development -p 3000",
@@ -31,6 +32,17 @@
       ],
       ".css": "css",
       ".css.map": "css"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "overrideBrowserslist": [
+          "> 1%",
+          "last 4 versions",
+          "ie >= 9"
+        ]
+      }
     }
   }
 }
