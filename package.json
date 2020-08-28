@@ -16,7 +16,7 @@
   },
   "scripts": {
     "dev": "npm run clean && parcel src/index.html --out-dir development -p 3000",
-    "build": "parcel build src/*.html --out-dir dist --public-url ./",
+    "build": "rimraf ./dist && parcel build src/*.html --out-dir dist --public-url ./",
     "clean": "rimraf ./development && rimraf -rf ./.cache"
   },
   "author": "Hasib",
@@ -28,7 +28,9 @@
       "img": [
         ".jpg",
         ".png",
-        ".svg"
+        ".svg",
+        ".gif",
+        ".jpeg"
       ],
       ".css": "css",
       ".css.map": "css"
