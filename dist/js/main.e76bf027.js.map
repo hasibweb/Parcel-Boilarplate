@@ -1,1 +1,0 @@
-{"version":3,"sources":["js/main.js"],"names":["console","log"],"mappings":";AAAAA,QAAQC,IAAI","file":"main.e76bf027.js","sourceRoot":"..\\src","sourcesContent":["console.log(\"Hello Form JS\");\r\n"]}
