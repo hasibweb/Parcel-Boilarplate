@@ -2,49 +2,40 @@
   "name": "parcel-test",
   "version": "1.0.0",
   "description": "My awesome app",
+  "author": "Hasib",
+  "license": "ISC",
   "repository": {},
+  "scripts": {
+    "dev": "npm run clean && parcel src/index.html --out-dir development",
+    "build": "rimraf ./dist && parcel build src/*.html --out-dir dist --public-url ./",
+    "clean": "rimraf ./development && rimraf -rf ./.cache"
+  },
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/plugin-transform-runtime": "^7.9.0",
     "@babel/runtime-corejs2": "^7.9.2",
+    "@fullhuman/postcss-purgecss": "^2.3.0",
     "autoprefixer": "^9.8.6",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-custom-dist-structure": "^1.1.14",
+    "postcss-modules": "^3.2.2",
     "rimraf": "^3.0.2",
     "sass": "^1.26.10"
   },
-  "scripts": {
-    "dev": "npm run clean && parcel src/index.html --out-dir development -p 3000",
-    "build": "rimraf ./dist && parcel build src/*.html --out-dir dist --public-url ./",
-    "clean": "rimraf ./development && rimraf -rf ./.cache"
-  },
-  "author": "Hasib",
-  "license": "ISC",
   "customDistStructure": {
     "config": {
+      ".css": "css",
+      ".css.map": "css",
       ".js": "js",
       ".js.map": "js",
+      ".svg": "svg",
       "img": [
         ".jpg",
         ".png",
-        ".svg",
         ".gif",
         ".jpeg"
-      ],
-      ".css": "css",
-      ".css.map": "css"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {
-        "overrideBrowserslist": [
-          "> 1%",
-          "last 4 versions",
-          "ie >= 9"
-        ]
-      }
+      ]
     }
   }
 }
